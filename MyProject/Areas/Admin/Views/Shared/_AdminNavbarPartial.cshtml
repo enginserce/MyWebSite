@@ -1,0 +1,53 @@
+﻿<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+        @await Component.InvokeAsync("Info")
+        <li class="nav-item">
+            <a class="nav-link" href="/Admin/Index">
+                <span class="menu-title">Anasayfa</span>
+                <i class="mdi mdi-home menu-icon"></i>
+            </a>
+        </li> 
+        <li class="nav-item">
+            <a class="nav-link" href="/Admin/About">
+                <span class="menu-title">Hakkımda</span>
+                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Admin/Services">
+                <span class="menu-title">Hizmetlerim</span>
+                <i class="mdi mdi-new-box menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Admin/Skills">
+                <span class="menu-title">Becerilerim</span>
+                <i class="mdi mdi-message menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Admin/Portfolio">
+                <span class="menu-title">Portföyüm</span>
+                <i class="mdi mdi-message menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Admin/Experience">
+                <span class="menu-title">Deneyimlerim</span>
+                <i class="mdi mdi-bell-outline menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Admin/Contact">
+                <span class="menu-title">İletişim</span>
+                <i class="mdi mdi-settings menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Login/LogOut">
+                <span class="menu-title">Çıkış Yap</span>
+                <i class="mdi mdi-power menu-icon"></i>
+            </a>
+        </li>
+    </ul>
+</nav>

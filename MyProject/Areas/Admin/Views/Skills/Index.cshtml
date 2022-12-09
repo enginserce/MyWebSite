@@ -1,0 +1,44 @@
+﻿@using EntityLayer.Concrete
+@model List<Skills>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@if (!Model.Any())
+{
+    <div class="alert alert-danger text-black" role="alert">
+        Veri yok.
+    </div>
+}
+else
+{
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+            <a href="/Admin/Skills/Add" class="btn btn-success">Beceri Ekle</a>
+        <div class="card-body">
+            <h4 class="card-title">Becerilerim</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Adı</th>
+                        <th>%</th>
+                        <th>Düzenle</th>
+                        <th>Sil</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.SkillsID</td>
+                        <td>@item.SkillsName</td>
+                        <td>@item.Progress</td>
+                        <td><a href="/Admin/Skills/Edit/@item.SkillsID" class="btn btn-outline-warning">Düzenle</a></td>
+                        <td><a href="/Admin/Skills/Delete/@item.SkillsID" class="btn btn-outline-danger">Sil</a></td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+}

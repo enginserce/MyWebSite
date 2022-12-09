@@ -1,0 +1,69 @@
+﻿
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Engin Serçe</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&amp;display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&amp;display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&amp;display=swap" />
+    </noscript>
+    <link href="~/css/font-awesome/css/all.min.css?ver=1.2.0" rel="stylesheet">
+    <link href="~/css/bootstrap-icons/bootstrap-icons.css?ver=1.2.0" rel="stylesheet">
+    <link href="~/css/bootstrap.min.css?ver=1.2.0" rel="stylesheet">
+    <link href="~/css/aos.css?ver=1.2.0" rel="stylesheet">
+    <link href="~/css/main.css?ver=1.2.0" rel="stylesheet">
+    <noscript>
+        <style type="text/css">
+            [data-aos] {
+                opacity: 1 !important;
+                transform: translate(0) scale(1) !important;
+            }
+        </style>
+    </noscript>
+</head>
+<body id="top">
+    <header class="bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="header-nav" role="navigation">
+            <div class="container">
+                <a class="link-dark navbar-brand site-title mb-0" href="#">Engin Serçe</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto me-2">
+                        <li class="nav-item"><a class="nav-link" href="#about">Hakkımda</a></li>
+                        @*<li class="nav-item"><a class="nav-link" href="#services">Services</a></li>*@
+                        <li class="nav-item"><a class="nav-link" href="#skills">Yeteneklerim</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portföyüm</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#experience">Deneyimlerim</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="page-content">
+        <div id="content">
+            @await Component.InvokeAsync("Hello")
+            @await Component.InvokeAsync("About")
+            @*@await Component.InvokeAsync("Services")*@
+            @await Component.InvokeAsync("Skills")
+            @await Component.InvokeAsync("Portfolio")
+            @await Component.InvokeAsync("Experience")
+            @RenderBody()
+            @await Component.InvokeAsync("Footer")
+        </div>
+    </div>
+    <div id="scrolltop"><a class="btn btn-secondary" href="#top"><span class="icon"><i class="fas fa-angle-up fa-x"></i></span></a></div>
+    <script src="~/scripts/imagesloaded.pkgd.min.js?ver=1.2.0"></script>
+    <script src="~/scripts/masonry.pkgd.min.js?ver=1.2.0"></script>
+    <script src="~/scripts/BigPicture.min.js?ver=1.2.0"></script>
+    <script src="~/scripts/purecounter.min.js?ver=1.2.0"></script>
+    <script src="~/scripts/bootstrap.bundle.min.js?ver=1.2.0"></script>
+    <script src="~/scripts/aos.min.js?ver=1.2.0"></script>
+    <script src="~/scripts/main.js?ver=1.2.0"></script>
+</body>
+</html>

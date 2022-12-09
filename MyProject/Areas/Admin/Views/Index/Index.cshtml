@@ -1,0 +1,94 @@
+﻿@using EntityLayer.Concrete
+@model List<Hello>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title">
+            <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                <i class="mdi mdi-home"></i>
+            </span> Anasayfa
+        </h3>
+    </div>
+    <div class="row">
+        <div class="col-md-4 stretch-card grid-margin">
+            <div class="card bg-gradient-danger card-img-holder text-white">
+                <div class="card-body">
+                    <img src="/admin/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image">
+                    <h4 class="font-weight-normal mb-3">
+                        Beceriler <i class="mdi mdi-chart-line mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">@ViewBag.v1</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 stretch-card grid-margin">
+            <div class="card bg-gradient-info card-img-holder text-white">
+                <div class="card-body">
+                    <img src="/admin/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image">
+                    <h4 class="font-weight-normal mb-3">
+                       Portföy <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">@ViewBag.v2</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 stretch-card grid-margin">
+            <div class="card bg-gradient-success card-img-holder text-white">
+                <div class="card-body">
+                    <img src="/admin/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image">
+                    <h4 class="font-weight-normal mb-3">
+                        Gelen Kutusu <i class="mdi mdi-diamond mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">@ViewBag.v3</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Intro</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Görsel</th>
+                            <th>Lead</th>
+                            <th>Title</th>
+                            <th>Açıklama</th>
+                            <th>Github URL</th>
+                            <th>Instagram URL</th>
+                            <th>Linkedin URL</th>
+                            <th>Twitter URL</th>
+                            <th>Footer Name</th>
+                            <th>Düzenle</th>
+                        </tr>
+                    </thead>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.HelloID</td>
+                            <td class="py-1">
+                                <img src="@item.Image" alt="image">
+                            </td>
+                            <td>@item.Lead</td>
+                            <td>@item.Title</td>
+                            <td>@item.Description</td>
+                            <td>@item.GithubUrl</td>
+                            <td>@item.InstagramUrl</td>
+                            <td>@item.LinkedinUrl</td>
+                            <td>@item.TwitterUrl</td>
+                            <td>@item.FooterName</td>
+                            <td><a href="/Admin/Index/Edit/@item.HelloID" class="btn btn-outline-warning">Düzenle</a></td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+

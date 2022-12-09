@@ -1,0 +1,29 @@
+﻿@model EntityLayer.Concrete.Portfolio
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Beceri Ekle</h4>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label>Image</label>
+                    <input type="text" class="form-control" asp-for="Image">
+                </div>
+                <div class="form-group">
+                    <label>URL</label>
+                    <input type="text" class="form-control" asp-for="Url">
+                </div>
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    <input type="text" class="form-control" asp-for="Description">
+                </div>
+                <button type="submit" class="btn btn-gradient-primary mr-2">Ekle</button>
+            </form>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,18 @@
+﻿@model EntityLayer.Concrete.Contact
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin">
+    <div class="card">
+        <div class="card-body">
+            <label class="badge badge-gradient-success" style="float:right;">Tarih: @Model.ContactDate.ToShortDateString()</label>
+            <div class="mb-0 flex-grow">
+                <h5 class="mr-2 mb-2">Gönderen Kişi: @Model.Name - @Model.Email</h5>
+                <p class="mb-0 font-weight-light">Mesaj: @Model.Message</p>
+            </div>
+        </div>
+    </div>
+</div>
+

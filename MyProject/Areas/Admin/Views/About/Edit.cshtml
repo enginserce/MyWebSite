@@ -1,0 +1,48 @@
+﻿@model EntityLayer.Concrete.About
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Düzenleme</h4>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <input type="hidden" asp-for="AboutID" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Görsel</label>
+                    <input type="text" asp-for="Image" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Başlık</label>
+                    <input type="text" asp-for="Title" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    <textarea asp-for="Description" class="form-control" cols="10" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Yaş</label>
+                    <input type="text" asp-for="Age" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" asp-for="Email" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Telefon</label>
+                    <input type="text" asp-for="Phone" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Adres</label>
+                    <input type="text" asp-for="Adress" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-gradient-primary mr-2">Gönder</button>
+            </form>
+        </div>
+    </div>
+</div>
+

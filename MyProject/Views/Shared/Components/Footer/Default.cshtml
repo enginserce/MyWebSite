@@ -1,0 +1,27 @@
+﻿@using EntityLayer.Concrete
+@model List<Hello>
+
+<footer class="pt-4 pb-4 text-center bg-light">
+    <div class="container">
+        @foreach (var item in Model)
+        {
+        <div class="my-3">
+            <div class="h4">@item.FooterName</div>
+            <p>@item.Description</p>
+            <div class="social-nav">
+                <nav role="navigation">
+                    <ul class="nav justify-content-center">
+                            <li class="nav-item"><a class="nav-link" href="http://www.twitter.com/@item.TwitterUrl" title="Twitter"><i class="fab fa-twitter"></i><span class="menu-title sr-only">Twitter</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/@item.InstagramUrl" title="Instagram"><i class="fab fa-instagram"></i><span class="menu-title sr-only">Instagram</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/@item.LinkedinUrl" title="LinkedIn"><i class="fab fa-linkedin"></i><span class="menu-title sr-only">LinkedIn</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="https://github.com/@item.GithubUrl" title="Github"><i class="fab fa-github"></i><span class="menu-title sr-only">Github</span></a></li>
+                        </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="text-small text-secondary">
+            <div class="mb-1">@DateTime.Now.Year &copy; @item.FooterName. Tüm hakları saklıdır.</div>
+        </div>
+        }
+    </div>
+</footer>

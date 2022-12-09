@@ -1,0 +1,56 @@
+﻿@model EntityLayer.Concrete.Hello
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Düzenleme</h4>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <input type="hidden" asp-for="HelloID" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Görsel</label>
+                    <input type="text" asp-for="Image" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Lead</label>
+                    <input type="text" asp-for="Lead" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Başlık</label>
+                    <input type="text" asp-for="Title" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    <input type="text" asp-for="Description" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Github</label>
+                    <input type="text" asp-for="GithubUrl" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Instagram</label>
+                    <input type="text" asp-for="InstagramUrl" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Linkedin</label>
+                    <input type="text" asp-for="LinkedinUrl" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Twitter</label>
+                    <input type="text" asp-for="TwitterUrl" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Footer</label>
+                    <input type="text" asp-for="FooterName" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-gradient-primary mr-2">Gönder</button>
+            </form>
+        </div>
+    </div>
+</div>

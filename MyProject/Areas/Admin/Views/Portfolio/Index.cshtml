@@ -1,0 +1,49 @@
+﻿@using EntityLayer.Concrete
+@model List<Portfolio>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+@if (!Model.Any())
+{
+    <div class="alert alert-danger text-black" role="alert">
+        Veri yok.
+    </div>
+}
+else
+{
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+            <a href="/Admin/Portfolio/Add" class="btn btn-success">Portföy Ekle</a>
+        <div class="card-body">
+            <h4 class="card-title">Portföy</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Görsel</th>
+                        <th>URL</th>
+                        <th>Açıklama</th>
+                        <th>Düzenle</th>
+                        <th>Sil</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th>@item.PortfolioID</th>
+                        <td class="py-1">
+                            <img src="@item.Image" alt="image">
+                        </td>
+                        <td>@item.Url</td>
+                        <td>@item.Description</td>
+                        <td><a href="/Admin/Portfolio/Edit/@item.PortfolioID" class="btn btn-outline-warning">Düzenle</a></td>
+                        <td><a href="/Admin/Portfolio/Delete/@item.PortfolioID" class="btn btn-outline-danger">Sil</a></td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+}
