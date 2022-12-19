@@ -4,7 +4,13 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@if (ViewBag.Errors != null)
+{
+    <script>
+        swal("Başarısız!", "@ViewBag.Errors", "error");
+    </script>
+}
 <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
         <div class="content-wrapper d-flex align-items-center auth">
@@ -14,18 +20,25 @@
                         <div class="brand-logo text-center">
                             <img src="/admin/assets/images/logo.png">
                         </div>
-                        <h4 class="text-center">Welcome to sir!</h4>
                         <form class="pt-3" method="post">
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-lg" asp-for="UserName" id="exampleInputEmail1" placeholder="Username">
+                                <input type="text" class="form-control form-control-lg" asp-for="UserName" id="exampleInputEmail1" placeholder="Kullanıcı adı">
+                                <br />
+                                <span asp-validation-for="UserName" class="text-danger" ></span>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control form-control-lg" asp-for="Password" id="exampleInputPassword1" placeholder="Password">
+                                <input type="password" class="form-control form-control-lg" asp-for="Password" id="exampleInputPassword1" placeholder="Şifre">
+                                <br />
+                                <span asp-validation-for="Password" class="text-danger"></span>
                             </div>
                             <div class="mt-3">
-                                <button class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">SIGN IN</button>
+                                <button class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">Giriş Yap</button>
                             </div>
                         </form>
+                        <br />
+                        <div class="text-center mt-4 font-weight-light">
+                            @DateTime.Now.Year © <a href="/">Engin Serçe.</a> Tüm hakları saklıdır.
+                        </div>
                     </div>
                 </div>
             </div>

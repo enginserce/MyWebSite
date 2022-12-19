@@ -11,6 +11,7 @@ namespace MyProject.Models
 
         [Display(Name = "Şifre")]
         [Compare("Password", ErrorMessage = "Lütfen şifrenizi giriniz.")]
+        [Required(ErrorMessage = "Lütfen şifrenizi giriniz.")]
         public string Password { get; set; }
     }
 }

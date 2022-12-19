@@ -39,7 +39,7 @@ namespace MyProject.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Index", "Login");
+                    ViewBag.Errors = "Kullanici adi veya sifre hatali";
                 }
             }
             return View();
